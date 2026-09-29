@@ -1,0 +1,27 @@
+from PIL import Image, ImageDraw
+width, height = 800, 500
+image = Image.new("RGB", (width, height), "skyblue")
+draw = ImageDraw.Draw(image)
+draw.ellipse((600, 50, 720, 170), fill="yellow")
+draw.polygon(
+    [(0, 400), (180, 180), (350, 400)],
+    fill="green"
+)
+draw.polygon(
+    [(250, 400), (480, 150), (750, 400)],
+    fill="darkgreen"
+)
+draw.rectangle((0, 400, width, height), fill="lightgreen")
+draw.text((250, 30), "Beautiful Nature", fill="black")
+file_name = "beautiful_nature.png"
+image.save(file_name)
+description = (
+    "A simple nature scene showing a blue sky, yellow sun, "
+    "green mountains, and green ground."
+)
+print("Image created successfully!")
+print("File Name:", file_name)
+print("Description:", description)
+
+OUTPUT:
+Image created successfully!
